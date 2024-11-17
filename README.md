@@ -20,7 +20,7 @@ npm install
  2. Add your OMDB API key to the .env file:
 
 ```bash
-REACT_APP_OMDB_API_KEY = your-api-key-here
+VITE_OMDB_API_KEY = your-api-key-here
 ```
 
 ## 4. Running the Application Locally
@@ -29,7 +29,7 @@ Once dependencies are installed, you can run the application locally using the f
 npm run dev
 ```
 
-This will start the development server, and you can view the app by navigating to http://localhost:number in your browser.
+This will start the development server, and you can view the app by navigating to http://localhost: number in your browser.
 
 ## 5. Testing the APIs
 I have integrated two APIs for searching and getting details about movies:
@@ -48,7 +48,7 @@ I have integrated two APIs for searching and getting details about movies:
 
 <span>Get Movie Details API:</span>
 <ul>
-  <li>URL: http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=tt0286944</li>
+  <li>URL: http://www.omdbapi.com/?apikey=${process.env.VITE_OMDB_API_KEY}&i=tt0286944</li>
   <li>Method: GET</li>
   <li>Parameters:</li>
 <ul>
@@ -72,13 +72,13 @@ per day limit (1,000 daily limit)
 ## 7. How to test API in Postman
 ### First Api
 <ul>
-  <li>URL: http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=movies&page=3</li>
+  <li>URL: http://www.omdbapi.com/?apikey=${process.env.VITE_OMDB_API_KEY}&s=movies&page=3</li>
 </ul>
 <img src=https://github.com/user-attachments/assets/1750d6be-35d2-4992-af00-0744d3c6f220 alt="first api" />
 
 ### Second Api
 <ul>
-<li>URL: http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=tt0286944</li>
+<li>URL: http://www.omdbapi.com/?apikey=${process.env.VITE_OMDB_API_KEY}&i=tt0286944</li>
 </ul>
 <img src=https://github.com/user-attachments/assets/3a3c75d4-60e9-4ba4-9fc7-eba8e0a0db2b alt="second api"/>
 
@@ -92,7 +92,7 @@ This project uses Tenstack Query (formerly React Query) to handle API requests. 
 import { useQuery } from '@tanstack/react-query';
 
 const fetchMovies = async () => {
-  const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=movies&page=3`);
+  const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.VITE_OMDB_API_KEY}&s=movies&page=3`);
   return response.json();
 };
 
